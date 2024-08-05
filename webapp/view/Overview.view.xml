@@ -1,7 +1,8 @@
 <mvc:View controllerName="sap.training.exc.controller.Overview"
           xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
           xmlns:mvc="sap.ui.core.mvc"
-          xmlns="sap.m">
+          xmlns="sap.m"
+	core:require="{formatter: 'sap/training/exc/model/formatter'}">
 
      <Page title="Flight Customers">
         <content>
@@ -121,7 +122,10 @@
                     </Column>
                     <Column>
                         <header>
-                            <Text text="Class"/>
+                            <Text text="{
+				    path: 'Class',
+				    formatter: 'formatter.classtext'
+				    }"/>
                         </header>                        
                     </Column>
                     <Column>
